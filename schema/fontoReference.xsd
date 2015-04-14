@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+
+<!-- ============================================================= -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+  <!-- Add the domains to the base topic XML Schema -->
+  <!--  ================ TOPIC DOMAINS =====================  -->
+  <!--<xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:highlightDomain.xsd:1.2"/>-->
+  
+  <!--  ================ GROUP DEFINITIONS =====================  -->
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:referenceGrp.xsd:1.2" />
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:metaDeclGrp.xsd:1.2"/>
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:tblDeclGrp.xsd:1.2"/>
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:topicGrp.xsd:1.2"/>
+  
+  <!-- =================  MODULE INLCUDE DEFINITION  ==================  -->
+  <!--<xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:commonElementMod.xsd:1.2"/>-->
+  <!-- ======== Table elements ======== -->
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:tblDeclMod.xsd:1.2"/>    
+  <!-- ======= MetaData elements, plus keyword and indexterm ======= -->
+  <xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:metaDeclMod.xsd:1.2"/>
+  
+  <!--  ================ CONSTRAINT DEFINITIONS =====================  -->
+  <xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoCommonElementConstraintMod.xsd"/>
+  <xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoTopicModConstraintMod.xsd"/>
+  <xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoTblDeclConstraintMod.xsd"/>
+  <xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoReferenceModConstraintMod.xsd"/>
+  <xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoHighlightDomainConstraintMod.xsd"/>
+  
+  <xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:commonElementGrp.xsd:1.2">
+    
+
+    <xs:group name="ph">
+      <xs:choice>
+        <xs:group ref="ph"/>
+        <xs:group ref="hi-d-ph" />
+      </xs:choice>
+    </xs:group>
+
+  </xs:redefine>
+
+  <!--  ================ INFO TYPES =====================  -->
+  <xs:group name="info-types">
+    <xs:sequence>
+      <xs:element ref="reference"/>
+    </xs:sequence>   
+  </xs:group>
+  
+
+  <xs:attributeGroup name="domains-att">
+    <xs:attribute name="domains" type="xs:string" 
+                          default="(topic fonot-highlight-c)                                           
+                                          (topic reference)
+                                          (topic fonto-commonElement-c)
+                                          (topic fonto-topicMod-c)
+                                          (topic fonto-tblDecl-c)
+                                          (topic reference fonto-referenceMod-c)"/>
+  </xs:attributeGroup>
+
+  
+</xs:schema>

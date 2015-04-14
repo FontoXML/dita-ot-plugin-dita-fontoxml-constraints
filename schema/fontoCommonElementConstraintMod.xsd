@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ===== Start  XSD ================================================== -->
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+>
+  
+  <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:appinfo>
+      <dita:domainsModule xmlns:dita="http://dita.oasis-open.org/architecture/2005/">(topic fonto-commonElement-c)</dita:domainsModule>
+    </xs:appinfo>
+    <xs:documentation> 
+    </xs:documentation>
+  </xs:annotation>
+  
+  <xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:commonElementMod.xsd:1.2">
+
+
+<!-- ================== element with mixed = true in the standard, now block only ================== -->
+    <xs:complexType name="desc.class">
+      <xs:complexContent>
+        <xs:restriction base="desc.class">
+          <xs:sequence>
+            <xs:group ref="desc.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="desc.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:group name="desc.cnt">
+      <xs:choice>
+        <xs:group ref="basic.block.notbfgobj"/>
+        <xs:group ref="data.elements.incl"/>
+        <xs:group ref="foreign.unknown.incl"/>
+      </xs:choice>
+    </xs:group> 
+    
+    <xs:complexType name="lq.class">
+      <xs:complexContent>
+        <xs:restriction base="lq.class">
+          <xs:sequence>
+            <xs:group ref="lq.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="lq.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:group name="longquote.cnt">
+      <xs:choice>
+        <xs:group ref="basic.block.nolq"/>
+        <xs:group ref="data.elements.incl"/>
+        <xs:group ref="foreign.unknown.incl"/>
+      </xs:choice>
+    </xs:group>
+    
+    <xs:complexType name="note.class">
+      <xs:complexContent>
+        <xs:restriction base="note.class">
+          <xs:sequence>
+            <xs:group ref="note.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="note.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:group name="note.cnt">
+      <xs:choice>
+        <xs:group ref="basic.block.nonote"/>
+        <xs:group ref="data.elements.incl"/>
+        <xs:group ref="foreign.unknown.incl"/>
+      </xs:choice>
+    </xs:group>
+    
+    <xs:complexType name="li.class">
+      <xs:complexContent>
+        <xs:restriction base="li.class">
+          <xs:sequence>
+            <xs:group ref="li.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="li.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:group name="listitem.cnt">
+      <xs:choice>
+        <xs:group ref="basic.block"/>
+        <xs:group ref="data.elements.incl"/>
+        <xs:group ref="foreign.unknown.incl"/>
+      </xs:choice>
+    </xs:group>
+    
+    <xs:complexType name="itemgroup.class">
+      <xs:complexContent>
+        <xs:restriction base="itemgroup.class">
+          <xs:sequence>
+            <xs:group ref="itemgroup.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="itemgroup.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:group name="itemgroup.cnt">
+      <xs:choice>
+        <xs:group ref="basic.block"/>
+        <xs:group ref="data.elements.incl"/>
+        <xs:group ref="foreign.unknown.incl"/>
+      </xs:choice>
+    </xs:group>
+
+    <xs:complexType name="dd.class">
+      <xs:complexContent>
+        <xs:restriction base="dd.class">
+          <xs:sequence>
+            <xs:group ref="dd.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="dd.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:group name="defn.cnt">
+      <xs:choice>
+        <xs:group ref="basic.block"/>
+        <xs:group ref="data.elements.incl"/>
+        <xs:group ref="foreign.unknown.incl"/>
+      </xs:choice>
+    </xs:group>
+   
+    <xs:complexType name="draft-comment.class">
+      <xs:complexContent>
+        <xs:restriction base="draft-comment.class">
+          <xs:sequence>
+            <xs:group ref="draft-comment.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="draft-comment.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:group name="basic.phandblock">
+      <xs:choice>
+        <xs:group ref="basic.block"/>
+      </xs:choice>
+    </xs:group>
+    
+    <xs:complexType name="fn.class">
+      <xs:complexContent>
+        <xs:restriction base="fn.class">
+          <xs:sequence>
+            <xs:group ref="fn.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="fn.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:group name="fn.cnt">
+      <xs:choice>
+        <xs:group ref="basic.block.notbl"/>
+        <xs:group ref="data.elements.incl"/>
+        <xs:group ref="foreign.unknown.incl"/>
+      </xs:choice>
+    </xs:group>
+    
+    <!-- simple table entry AND table entry -->
+
+    <xs:complexType name="stentry.class">
+      <xs:complexContent>
+        <xs:restriction base="stentry.class">
+          <xs:sequence>
+            <xs:group ref="stentry.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="stentry.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+    
+    
+    <xs:group name="tblcell.cnt">
+      <xs:choice>
+        <xs:group ref="basic.block.notbl"/>
+        <xs:group ref="data.elements.incl"/>
+        <xs:group ref="foreign.unknown.incl"/>
+      </xs:choice>
+    </xs:group>
+
+<!-- ==================== constraining other content models ============================== -->
+    
+    <xs:group name="indexterm.content">
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="words.cnt" minOccurs="0"/>
+          <xs:group ref="indexterm" minOccurs="0"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:group>
+    
+    <xs:group name="fig.content">
+      <xs:sequence>
+        <xs:sequence>
+          <xs:group ref="title" minOccurs="0"/>
+          <xs:group ref="desc" minOccurs="0"/>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="fig.cnt"/>
+          </xs:choice>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:group>
+    
+    <xs:group name="fig.cnt">
+      <xs:choice>
+        <xs:group ref="basic.block.notbnofg"/>
+        <xs:group ref="foreign.unknown.incl"/>
+      </xs:choice>
+    </xs:group>
+    
+    <xs:group name="data.cnt">
+      <xs:choice>
+        <xs:group ref="words.cnt"/>
+        <xs:group ref="image"/>
+        <xs:group ref="ph"/>
+        <xs:group ref="title"/>
+      </xs:choice>
+    </xs:group>
+    
+<!-- ================== constraining basic blocks ================== -->
+    <xs:group name="basic.block">
+      <xs:choice>
+        <xs:group ref="p"/>
+        <xs:group ref="lq"/>
+        <xs:group ref="note"/>
+        <xs:group ref="dl"/>
+        <xs:group ref="ul"/>
+        <xs:group ref="ol"/>
+        <xs:group ref="pre"/>
+        <xs:group ref="fig"/>
+        <xs:group ref="table"/>
+      </xs:choice>
+    </xs:group>
+    
+    <xs:group name="basic.block.notbl">
+      <xs:choice>
+        <xs:group ref="p"/>
+        <xs:group ref="lq"/>
+        <xs:group ref="note"/>
+        <xs:group ref="dl"/>
+        <xs:group ref="ul"/>
+        <xs:group ref="ol"/>
+        <xs:group ref="pre"/>
+        <xs:group ref="fig"/>
+      </xs:choice>
+    </xs:group>
+    
+    <xs:group name="basic.block.nonote">
+      <xs:choice>
+        <xs:group ref="p"/>
+        <xs:group ref="lq"/>
+        <xs:group ref="dl"/>
+        <xs:group ref="ul"/>
+        <xs:group ref="ol"/>
+        <xs:group ref="pre"/>
+        <xs:group ref="fig"/>
+        <xs:group ref="table"/>
+      </xs:choice>
+    </xs:group>
+
+    <xs:group name="basic.block.nopara">
+      <xs:choice>
+        <xs:group ref="image"/>
+      </xs:choice>
+    </xs:group>
+    
+    <xs:group name="basic.block.nolq">
+      <xs:choice>
+        <xs:group ref="p"/>
+        <xs:group ref="note"/>
+        <xs:group ref="dl"/>
+        <xs:group ref="ul"/>
+        <xs:group ref="ol"/>
+        <xs:group ref="pre"/>
+        <xs:group ref="fig"/>
+        <xs:group ref="table"/>
+      </xs:choice>
+    </xs:group>
+
+    <xs:group name="basic.block.notbnofg">
+      <xs:choice>
+        <xs:group ref="image"/>
+      </xs:choice>
+    </xs:group>
+
+    <xs:group name="basic.block.notbfgobj">
+      <xs:choice>
+        <xs:group ref="p"/>
+        <xs:group ref="lq"/>
+        <xs:group ref="note"/>
+        <xs:group ref="dl"/>
+        <xs:group ref="ul"/>
+        <xs:group ref="ol"/>
+        <xs:group ref="pre"/>
+      </xs:choice>
+    </xs:group>
+    
+    <xs:group name="foreign.unknown.incl">
+      <xs:choice>
+        <xs:group ref="foreign"/>
+      </xs:choice>
+    </xs:group>
+    
+    <xs:group name="txt.incl">
+      <xs:choice>
+        <xs:group ref="fn"/>
+        <xs:group ref="indextermref"/>
+        <xs:group ref="indexterm"/>
+      </xs:choice>
+    </xs:group>
+    
+    <xs:group name="basic.ph">
+      <xs:choice>
+        <xs:group ref="ph"/>
+        <xs:group ref="term"/>
+        <xs:group ref="xref"/>
+        <xs:group ref="cite"/>
+        <xs:group ref="q"/>
+        <xs:group ref="keyword"/>
+        <xs:group ref="tm"/>
+      </xs:choice>
+    </xs:group>
+    
+    <xs:group name="basic.ph.noxref">
+      <xs:choice>
+        <xs:group ref="ph"/>
+        <xs:group ref="term"/>
+        <xs:group ref="q"/>
+        <xs:group ref="keyword"/>
+        <xs:group ref="tm"/>
+      </xs:choice>
+    </xs:group>
+
+  </xs:redefine>
+
+</xs:schema>

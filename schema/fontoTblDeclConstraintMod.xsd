@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    >
+    
+    <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:appinfo>
+            <dita:domainsModule xmlns:dita="http://dita.oasis-open.org/architecture/2005/">(topic fonto-tblDecl-c)</dita:domainsModule>
+        </xs:appinfo>
+        <xs:documentation> 
+        </xs:documentation>
+    </xs:annotation>
+    
+    <xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:tblDeclMod.xsd:1.2">
+        
+
+        <xs:complexType name="entry.class">
+            <xs:complexContent>
+                <xs:restriction base="entry.class">
+                    <xs:sequence>
+                        <xs:group ref="entry.content"/>
+                    </xs:sequence>
+                    <xs:attributeGroup ref="entry.attributes"/>
+                </xs:restriction>
+            </xs:complexContent>
+        </xs:complexType>
+        
+    </xs:redefine>
+        
+
+
+
+</xs:schema>

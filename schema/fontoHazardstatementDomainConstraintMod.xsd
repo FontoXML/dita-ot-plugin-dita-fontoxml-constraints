@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    >
+    
+    <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:appinfo>
+            <dita:domainsModule xmlns:dita="http://dita.oasis-open.org/architecture/2005/">(topic fonto-hazardstatement-c)</dita:domainsModule>
+        </xs:appinfo>
+        <xs:documentation> 
+        </xs:documentation>
+    </xs:annotation>
+    
+    <xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:hazardstatementDomain.xsd:1.2">
+        
+        <xs:group name="hazard.cnt">
+            <xs:sequence>
+                <xs:choice>
+                    <xs:group ref="basic.ph"/>
+                </xs:choice>
+            </xs:sequence>
+        </xs:group>
+        
+        
+    </xs:redefine>
+        
+
+
+
+</xs:schema>

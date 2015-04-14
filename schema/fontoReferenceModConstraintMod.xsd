@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ===== Start  XSD ================================================== -->
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+>
+  
+  <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:appinfo>
+      <dita:domainsModule xmlns:dita="http://dita.oasis-open.org/architecture/2005/">(topic reference fonto-referenceMod-c)</dita:domainsModule>
+    </xs:appinfo>
+    <xs:documentation> 
+    </xs:documentation>
+  </xs:annotation>
+  
+  <xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:referenceMod.xsd:1.2" >
+    
+    <xs:group name="refbody.content">
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="refsyn" minOccurs="0"/>
+          <xs:group ref="table" minOccurs="0"/>
+          <xs:group ref="simpletable" minOccurs="0"/>
+          <xs:group ref="properties" minOccurs="0"/>
+          <xs:group ref="section" minOccurs="0"/>
+          <xs:group ref="example" minOccurs="0"/>
+          <xs:group ref="data.elements.incl" minOccurs="0"/>
+          <xs:group ref="foreign.unknown.incl" minOccurs="0"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:group>
+    
+    <xs:group name="reference-info-types">
+      <xs:choice>
+        <xs:group ref="info-types" />
+      </xs:choice>
+    </xs:group>
+  
+  </xs:redefine>
+</xs:schema>
