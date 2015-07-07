@@ -1,6 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<task xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="urn:fonto:names:dita:xsd:fontoTask.xsd" id="t">
-    <title></title>
-    <taskbody></taskbody>
+<task id="t" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:fonto:names:dita:xsd:fontoTask.xsd">
+	<title>Clean/replace the EGR valve</title>
+	<taskbody>
+		<prereq>
+			<p>There is a car to work on</p>
+		</prereq>
+		<context>
+			<p>If the EGR valve is not operating smoothly, it might be dirty or defective.</p>
+		</context>
+		<steps>
+			<step>
+				<cmd>If the EGR valve is not operating smoothly, it might be dirty or defective.</cmd>
+				<info>
+					<p>When cleaning the EGR valve, use a piece of cloth soaked in cleaning solvent.</p>
+					<note type="warning">
+						<p>Spraying the solvent directly on to this part or soaking the parts in the solvent may damage the part.</p>
+					</note>
+					<note type="warning">
+						<p>Extreme care must be taken to prevent the removed deposits from falfjnginto the engine unit during cleaning.</p>
+					</note>
+				</info>
+			</step>
+			<step>
+				<cmd>Check the EGR valve again after cleaning.</cmd>
+			</step>
+			<step>
+				<note type="tip">
+					<p>Make sure to attach the EGR connector when reinstalling.</p>
+				</note>
+				<cmd>If the EGR valve operates smoothly reinstall it.</cmd>
+			</step>
+			<step>
+				<cmd>If the EGR valve still does not operate smoothly, replace the EGR valve (see Repair Manual). Make a print screen of the Techstreem/IT2 that shows the difference between the actual and the target EGR position. Enclose this print screen with the repair order for warranty purposes.</cmd>
+			</step>
+			<step>
+				<cmd>After installing the EGR valve recheck the total injection volume.</cmd>
+			</step>
+			<!-- Seperate task -->
+			<!-- title: Check the injection volume -->
+			<!-- context: It is necessary to determine if the total injection volume is according to specification. -->
+			<step>
+				<cmd>Start the engine and allow it to warm up to operating temperature.</cmd>
+				<stepresult>
+					<p>Engine Coolant Temperature is over 75 Celcius.</p>
+				</stepresult>
+			</step>
+			<step>
+				<cmd>Allow the engine to idle for more than 30 sec. before making any measurement.</cmd>
+			</step>
+			<step>
+				<cmd>Air conditioning, headlights and accessory equipment are switched OFF.</cmd>
+			</step>
+			<step>
+				<cmd>Connect Techstream/IT2 and check the injection volume and feedback signal for each injector by making a snapshot (You need this also to submit the warranty cIairn.)</cmd>
+				<info>
+					<p>Powertrain/ Engine and ECT/ Data List / Injection Feedback Val. #1 to #4 and Injection Volume.</p>
+				</info>
+			</step>
+			<step>
+				<cmd>Compare the injection volume and injection feedback signal for each injector with the values in the table.</cmd>
+			</step>
+			<!-- Seperate task -->
+			<!-- title: Delete DTe P252F -->
+			<!-- context: In case the engine ECU has the minimum calibration ID as mentioned in the table on page 51, DTC P252F can be cleared by resetting the oil change reminder light. -->
+			<step>
+				<cmd>Procedure for vehicles WITHOUT Multi-information display.</cmd>
+				<substeps>
+					<substep>
+						<cmd>Turn the ignition switch on (IG).</cmd>
+						<tutorialinfo>
+							<p>When teaching this to students, make sure they know what an ignition switch is.</p>
+						</tutorialinfo>
+					</substep>
+					<substep>
+						<cmd>Press the trip meter reset knob on the lower right side of the combination meter until the odometer displays "ODO".</cmd>
+					</substep>
+					<substep>
+						<cmd>Turn the ignition switch off.</cmd>
+					</substep>
+					<substep>
+						<cmd>Turn the ignition switch on (IG) while pressing and holding the trip meter reset knob. The LCD counts down by the dashes for 5 seconds as shown in the illustration to complete the reset procedure.</cmd>
+					</substep>
+					<substep>
+						<cmd>Release the trim meter reset knob.</cmd>
+						<stepxmp>
+							<p>By removing your thumb from the reset knob for example.</p>
+						</stepxmp>
+					</substep>
+					<substep>
+						<cmd>After the reset procedure is complete, the LCD displays "000000" for 1 second. LCD displays the odometer.</cmd>
+					</substep>
+					<substep>
+						<cmd>Turn the ignition switch off. Leave the ignition off for at least 1 minute.</cmd>
+					</substep>
+				</substeps>
+			</step>
+			<step>
+				<cmd>Procedure for vehicles WITH Multi-information display.</cmd>
+				<substeps>
+					<substep>
+						<cmd>Turn the ignition switch on (IG).</cmd>
+					</substep>
+					<substep>
+						<cmd>Press the trip meter reset knob on the lower right side of the combi nation meter until the odometer displays "ODO".</cmd>
+					</substep>
+					<substep>
+						<cmd></cmd>
+					</substep>
+					<substep>
+						<cmd></cmd>
+					</substep>
+					<substep>
+						<cmd>Turn the ignition switch off.</cmd>
+					</substep>
+					<substep>
+						<cmd>Turn the ignition switch on (IG) while pressing and holding the trip meter reset knob. Hold the trip meter reset knob until the following conditions are met and 5 seconds have passed.</cmd>
+					</substep>
+					<substep>
+						<cmd>When the odometer disappears and the master caution indicator reset is complete.</cmd>
+					</substep>
+					<substep>
+						<cmd>Turn the ignition switch off. Leave the ignition off for at least 1 minute.</cmd>
+					</substep>
+				</substeps>
+			</step>
+		</steps>
+		<result>
+			<p>The car is in perfect working order again.</p>
+		</result>
+		<example>
+			<p>Some example to illustrate all this.</p>
+		</example>
+		<postreq>
+			<p>The cars hood is closed.</p>
+		</postreq>
+	</taskbody>
 </task>

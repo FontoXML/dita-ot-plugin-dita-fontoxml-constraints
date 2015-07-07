@@ -1,64 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!-- ===== Start  XSD ================================================== -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:appinfo>
+			<dita:domainsModule xmlns:dita="http://dita.oasis-open.org/architecture/2005/">(topic task fonto-taskMod-c)</dita:domainsModule>
+		</xs:appinfo>
+		<xs:documentation/>
+	</xs:annotation>
 
-<xs:schema
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
-  elementFormDefault="qualified"
-  attributeFormDefault="unqualified"
->
-  
-  <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:appinfo>
-      <dita:domainsModule xmlns:dita="http://dita.oasis-open.org/architecture/2005/">(topic task fonto-taskMod-c)</dita:domainsModule>
-    </xs:appinfo>
-    <xs:documentation> 
-    </xs:documentation>
-  </xs:annotation>
-  
-  <xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:taskMod.xsd:1.2" >
-    
-    <xs:group name="step.content">
-      <xs:sequence>
-        <xs:sequence>
-          <xs:group ref="note" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:group ref="cmd"/>
-          <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="choices"/>
-            <xs:group ref="choicetable"/>
-            <xs:group ref="info"/>
-            <xs:group ref="stepxmp"/>
-            <xs:group ref="substeps"/>
-          </xs:choice>
-          <xs:group ref="stepresult" minOccurs="0"/>
-        </xs:sequence>
-      </xs:sequence>
-    </xs:group>
-    
-    <xs:group name="substep.content">
-      <xs:sequence>
-        <xs:sequence>
-          <xs:group ref="note" minOccurs="0" maxOccurs="unbounded"/>
-          <xs:group ref="cmd"/>
-          <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="info"/>
-            <xs:group ref="stepxmp"/>
-          </xs:choice>
-          <xs:group ref="stepresult" minOccurs="0"/>
-        </xs:sequence>
-      </xs:sequence>
-    </xs:group>
-    
-    
-    
-    
-    
-    <xs:group name="task-info-types">
-      <xs:choice>
-        <xs:group ref="info-types" />
-      </xs:choice>
-    </xs:group>
-  
-  </xs:redefine>
+	<xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:taskMod.xsd:1.2">
+
+		<!-- The next sections remove the mixed content in model in favor of paragraphs -->
+		<!-- itemgroup.cnt constraints in fontoCommonElementConstraintMod.xsd -->
+		<!-- section.notitle.cnt constraint in fontoTopicModConstraintMod.xsd -->
+		<xs:complexType name="context.class" mixed="false">
+			<xs:complexContent>
+				<xs:restriction base="context.class">
+					<xs:sequence>
+						<!-- section.notitle.cnt -->
+						<xs:group ref="context.content"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="context.attributes"/>
+				</xs:restriction>
+			</xs:complexContent>
+		</xs:complexType>
+
+		<xs:complexType name="info.class" mixed="false">
+			<xs:complexContent>
+				<xs:restriction base="info.class">
+					<xs:sequence>
+						<!-- itemgroup.cnt -->
+						<xs:group ref="info.content"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="info.attributes"/>
+				</xs:restriction>
+			</xs:complexContent>
+		</xs:complexType>
+
+		<xs:complexType name="postreq.class" mixed="false">
+			<xs:complexContent>
+				<xs:restriction base="postreq.class">
+					<xs:sequence>
+						<!-- section.notitle.cnt -->
+						<xs:group ref="postreq.content"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="postreq.attributes"/>
+				</xs:restriction>
+			</xs:complexContent>
+		</xs:complexType>
+		
+		<xs:complexType name="prereq.class" mixed="false">
+			<xs:complexContent>
+				<xs:restriction base="prereq.class">
+					<xs:sequence>
+						<!-- section.notitle.cnt -->
+						<xs:group ref="prereq.content"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="prereq.attributes"/>
+				</xs:restriction>
+			</xs:complexContent>
+		</xs:complexType>
+
+		<xs:complexType name="result.class" mixed="false">
+			<xs:complexContent>
+				<xs:restriction base="result.class">
+					<xs:sequence>
+						<!-- section.notitle.cnt -->
+						<xs:group ref="result.content"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="result.attributes"/>
+				</xs:restriction>
+			</xs:complexContent>
+		</xs:complexType>
+
+		<xs:complexType name="stepresult.class" mixed="false">
+			<xs:complexContent>
+				<xs:restriction base="stepresult.class">
+					<xs:sequence>
+						<!-- itemgroup.cnt -->
+						<xs:group ref="stepresult.content"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="stepresult.attributes"/>
+				</xs:restriction>
+			</xs:complexContent>
+		</xs:complexType>
+
+		<xs:complexType name="steps-informal.class" mixed="false">
+			<xs:complexContent>
+				<xs:restriction base="steps-informal.class">
+					<xs:sequence>
+						<!-- section.notitle.cnt -->
+						<xs:group ref="steps-informal.content"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="steps-informal.attributes"/>
+				</xs:restriction>
+			</xs:complexContent>
+		</xs:complexType>
+
+		<xs:complexType name="stepxmp.class" mixed="false">
+			<xs:complexContent>
+				<xs:restriction base="stepxmp.class">
+					<xs:sequence>
+						<!-- itemgroup.cnt -->
+						<xs:group ref="stepxmp.content"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="stepxmp.attributes"/>
+				</xs:restriction>
+			</xs:complexContent>
+		</xs:complexType>
+
+		<xs:complexType name="tutorialinfo.class" mixed="false">
+			<xs:complexContent>
+				<xs:restriction base="tutorialinfo.class">
+					<xs:sequence>
+						<!-- itemgroup.cnt -->
+						<xs:group ref="tutorialinfo.content"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="tutorialinfo.attributes"/>
+				</xs:restriction>
+			</xs:complexContent>
+		</xs:complexType>
+
+
+
+		<!-- Do not allow the <stepsection> element in <steps> -->
+		<xs:group name="steps.content">
+			<xs:sequence>
+				<xs:sequence maxOccurs="unbounded">
+					<xs:group ref="step" />
+				</xs:sequence>
+			</xs:sequence>
+		</xs:group>
+
+
+
+		<!-- Do not allow <choices>, <choicetable> or <itemgroup> in <step> -->
+		<xs:group name="step.content">
+			<xs:sequence>
+				<xs:sequence>
+					<xs:group ref="note" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:group ref="cmd"/>
+					<xs:choice minOccurs="0" maxOccurs="unbounded">
+						<xs:group ref="info"/>
+						<xs:group ref="stepxmp"/>
+						<xs:group ref="substeps"/>
+						<xs:group ref="tutorialinfo"/>
+					</xs:choice>
+					<xs:group ref="stepresult" minOccurs="0"/>
+				</xs:sequence>
+			</xs:sequence>
+		</xs:group>
+
+		<xs:group name="substep.content">
+			<xs:sequence>
+				<xs:sequence>
+					<xs:group ref="note" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:group ref="cmd"/>
+					<xs:choice minOccurs="0" maxOccurs="unbounded">
+						<xs:group ref="info"/>
+						<xs:group ref="tutorialinfo"/>
+						<xs:group ref="stepxmp"/>
+					</xs:choice>
+					<xs:group ref="stepresult" minOccurs="0"/>
+				</xs:sequence>
+			</xs:sequence>
+		</xs:group>
+
+
+
+		<!-- Determine if this is actually needed -->
+		<xs:group name="task-info-types">
+			<xs:choice>
+				<xs:group ref="info-types"/>
+			</xs:choice>
+		</xs:group>
+
+	</xs:redefine>
+
 </xs:schema>

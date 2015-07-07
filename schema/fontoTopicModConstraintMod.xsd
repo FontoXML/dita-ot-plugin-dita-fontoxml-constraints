@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!-- ===== Start  XSD ================================================== -->
-
-<xs:schema
-  xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/"
-  elementFormDefault="qualified"
-  attributeFormDefault="unqualified"
->
-  
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:appinfo>
       <dita:domainsModule xmlns:dita="http://dita.oasis-open.org/architecture/2005/">(topic fonto-topicMod-c)</dita:domainsModule>
     </xs:appinfo>
-    <xs:documentation> 
-    </xs:documentation>
+    <xs:documentation/>
   </xs:annotation>
-  
-  <xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:topicMod.xsd:1.2" >
+
+  <xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:topicMod.xsd:1.2">
 
     <xs:group name="topic-info-types">
       <xs:choice>
@@ -25,113 +16,121 @@
       </xs:choice>
     </xs:group>
 
-  <xs:complexType name="section.class">
-    <xs:complexContent>
-      <xs:restriction base="section.class">
-        <xs:sequence>
-          <xs:group ref="section.content"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="section.attributes"/>
-      </xs:restriction>
-    </xs:complexContent>
-  </xs:complexType>
-  
-  <xs:group name="section.cnt">
-    <xs:sequence>
-      <xs:choice>
-        <xs:group ref="basic.block"/>
-        <xs:group ref="title"/>
-        <xs:group ref="data.elements.incl"/>
-        <xs:group ref="foreign.unknown.incl"/>
-      </xs:choice>
-    </xs:sequence>
-  </xs:group>
-  
-    <xs:group name="body.cnt">
+    <xs:complexType name="section.class">
+      <xs:complexContent>
+        <xs:restriction base="section.class">
+          <xs:sequence>
+            <xs:group ref="section.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="section.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:group name="section.cnt">
       <xs:sequence>
         <xs:choice>
           <xs:group ref="basic.block"/>
-          <xs:group ref="draft-comment" />
+          <xs:group ref="title"/>
           <xs:group ref="data.elements.incl"/>
           <xs:group ref="foreign.unknown.incl"/>
         </xs:choice>
       </xs:sequence>
     </xs:group>
-    
-    <xs:group name="body.content">
-      <xs:sequence>
-        <xs:choice minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="body.cnt" minOccurs="0"/>
-          <xs:group ref="section" minOccurs="0"/>
-          <xs:group ref="example" minOccurs="0"/>
-        </xs:choice>  
-      </xs:sequence>
-    </xs:group>
 
-  <xs:complexType name="example.class">
-    <xs:complexContent>
-      <xs:restriction base="example.class">
-        <xs:sequence>
-          <xs:group ref="example.content"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="example.attributes"/>
-      </xs:restriction>
-    </xs:complexContent>
-  </xs:complexType>
-  
-  <xs:group name="example.cnt">
-    <xs:sequence>
-      <xs:choice>
-        <xs:group ref="basic.block"/>
-        <xs:group ref="title"/>
-        <xs:group ref="data.elements.incl"/>
-        <xs:group ref="foreign.unknown.incl"/>
-      </xs:choice>
-    </xs:sequence>
-  </xs:group>
-  
-  <xs:complexType name="linkinfo.class">
-    <xs:complexContent>
-      <xs:restriction base="linkinfo.class">
-        <xs:sequence>
-          <xs:group ref="linkinfo.content"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="linkinfo.attributes"/>
-      </xs:restriction>
-    </xs:complexContent>
-  </xs:complexType>
-  
-  <xs:complexType name="abstract.class">
-    <xs:complexContent>
-      <xs:restriction base="abstract.class">
-        <xs:sequence>
-          <xs:group ref="abstract.content"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="abstract.attributes"/>
-      </xs:restriction>
-    </xs:complexContent>
-  </xs:complexType>
-  
-  <xs:group name="abstract.cnt">
-    <xs:sequence>
-      <xs:choice>
-        <xs:group ref="basic.block"/>
-        <xs:group ref="data.elements.incl"/>
-        <xs:group ref="foreign.unknown.incl"/>
-        <xs:group ref="shortdesc"/>
-      </xs:choice>
-    </xs:sequence>
-  </xs:group>
-    
-    <xs:group name="related-links.content">
+    <xs:group name="section.notitle.cnt">
       <xs:sequence>
-        <xs:choice  minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="link" minOccurs="0"/>
-          <xs:group ref="linklist" minOccurs="0"/>
+        <xs:choice>
+          <xs:group ref="basic.block"/>
+          <xs:group ref="data.elements.incl"/>
+          <xs:group ref="foreign.unknown.incl"/>
         </xs:choice>
       </xs:sequence>
     </xs:group>
-    
-    
+
+    <xs:group name="body.cnt">
+      <xs:sequence>
+        <xs:choice>
+          <xs:group ref="basic.block"/>
+          <xs:group ref="draft-comment"/>
+          <xs:group ref="data.elements.incl"/>
+          <xs:group ref="foreign.unknown.incl"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:group>
+
+    <xs:group name="body.content">
+      <xs:sequence>
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+          <xs:group minOccurs="0" ref="body.cnt"/>
+          <xs:group minOccurs="0" ref="section"/>
+          <xs:group minOccurs="0" ref="example"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="example.class">
+      <xs:complexContent>
+        <xs:restriction base="example.class">
+          <xs:sequence>
+            <xs:group ref="example.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="example.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:group name="example.cnt">
+      <xs:sequence>
+        <xs:choice>
+          <xs:group ref="basic.block"/>
+          <xs:group ref="title"/>
+          <xs:group ref="data.elements.incl"/>
+          <xs:group ref="foreign.unknown.incl"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="linkinfo.class">
+      <xs:complexContent>
+        <xs:restriction base="linkinfo.class">
+          <xs:sequence>
+            <xs:group ref="linkinfo.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="linkinfo.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="abstract.class">
+      <xs:complexContent>
+        <xs:restriction base="abstract.class">
+          <xs:sequence>
+            <xs:group ref="abstract.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="abstract.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:group name="abstract.cnt">
+      <xs:sequence>
+        <xs:choice>
+          <xs:group ref="basic.block"/>
+          <xs:group ref="data.elements.incl"/>
+          <xs:group ref="foreign.unknown.incl"/>
+          <xs:group ref="shortdesc"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:group>
+
+    <xs:group name="related-links.content">
+      <xs:sequence>
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+          <xs:group minOccurs="0" ref="link"/>
+          <xs:group minOccurs="0" ref="linklist"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:group>
   </xs:redefine>
 </xs:schema>
