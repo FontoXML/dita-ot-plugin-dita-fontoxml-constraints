@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ===== Start  XSD ================================================== -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:appinfo>
+			<dita:domainsModule xmlns:dita="http://dita.oasis-open.org/architecture/2005/">(map fonto-mapMod-c)</dita:domainsModule>
+		</xs:appinfo>
+		<xs:documentation/>
+	</xs:annotation>
+
+	<xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:mapMod.xsd:1.2">
+		<!-- Redefine if needed -->
+	</xs:redefine>
+
+</xs:schema>

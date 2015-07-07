@@ -61,6 +61,16 @@
 	<uri name="fontoHighlightDomainConstraintMod.xsd" uri="fontoHighlightDomainConstraintMod.xsd"/>
 	<uri name="urn:fonto:names:dita:xsd:fontoHighlightDomainConstraintMod.xsd" uri="fontoHighlightDomainConstraintMod.xsd"/>
 
+	<system systemId="fontoMap.xsd" uri="fontoMap.xsd"/>
+	<system systemId="urn:fonto:names:dita:xsd:fontoMap.xsd" uri="fontoMap.xsd"/>
+	<uri name="fontoMap.xsd" uri="fontoMap.xsd"/>
+	<uri name="urn:fonto:names:dita:xsd:fontoMap.xsd" uri="fontoMap.xsd"/>
+
+	<system systemId="fontoMapModConstraintMod.xsd" uri="fontoMapModConstraintMod.xsd"/>
+	<system systemId="urn:fonto:names:dita:xsd:fontoMapModConstraintMod.xsd" uri="fontoMapModConstraintMod.xsd"/>
+	<uri name="fontoMapModConstraintMod.xsd" uri="fontoMapModConstraintMod.xsd"/>
+	<uri name="urn:fonto:names:dita:xsd:fontoMapModConstraintMod.xsd" uri="fontoMapModConstraintMod.xsd"/>
+
 	<system systemId="fontoConceptModConstraintMod.xsd" uri="fontoConceptModConstraintMod.xsd"/>
 	<system systemId="urn:fonto:names:dita:xsd:fontoConceptModConstraintMod.xsd" uri="fontoConceptModConstraintMod.xsd"/>
 	<uri name="fontoConceptModConstraintMod.xsd" uri="fontoConceptModConstraintMod.xsd"/>

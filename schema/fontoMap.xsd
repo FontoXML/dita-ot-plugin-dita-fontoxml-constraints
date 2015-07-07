@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ 
+	<!-- ======= INCLUDE ======= -->
+	<xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:mapGroupMod.xsd:1.2"/>
+	<xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:metaDeclMod.xsd:1.2"/>
+
+	<!--  ================ GROUP DEFINITIONS =====================  -->
+	<xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:metaDeclGrp.xsd:1.2"/>
+	<xs:include schemaLocation="urn:oasis:names:tc:dita:xsd:tblDeclGrp.xsd:1.2"/>
+
+	<!--  ================ CONSTRAINTS =====================  -->
+	<xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoCommonElementConstraintMod.xsd"/>
+	<xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoMapModConstraintMod.xsd"/>
+	<xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoTblDeclConstraintMod.xsd"/>
+	<xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoHighlightDomainConstraintMod.xsd"/>
+
+	<xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:commonElementGrp.xsd:1.2">
+
+		<xs:group name="ph">
+			<xs:choice>
+				<xs:group ref="ph"/>
+				<xs:group ref="hi-d-ph"/>
+			</xs:choice>
+		</xs:group>
+
+	</xs:redefine>
+
+	<xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:mapGrp.xsd:1.2">
+		<xs:group name="topicref">
+			<xs:choice>
+				<xs:group ref="topicref"/>
+				<xs:group ref="mapgroup-d-topicref"/>
+			</xs:choice>
+		</xs:group>
+	</xs:redefine>
+
+	<xs:attributeGroup name="domains-att">
+		<xs:attribute name="domains" type="xs:string" default="(map mapgroup-d) (topic hi-d) (topic fonto-highlight-c) (topic fonto-commonElement-c) (map fontoMapMod-c) (topic fonto-tblDecl-c)" />
+	</xs:attributeGroup>
+
+</xs:schema>

@@ -31,7 +31,6 @@
   
   <xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:commonElementGrp.xsd:1.2">
     
-
     <xs:group name="ph">
       <xs:choice>
         <xs:group ref="ph"/>
@@ -41,7 +40,6 @@
 
   </xs:redefine>
 
-
   <xs:group name="info-types">
     <xs:sequence>
       <xs:element ref="topic"/>
@@ -49,12 +47,7 @@
   </xs:group>
 
   <xs:attributeGroup name="domains-att">
-    <xs:attribute name="domains" type="xs:string"
-      default="(topic fonot-highlight-c)
-                                           (topic fonto-commonElement-c)
-                                           (topic fonto-topicMod-c)
-                                           (topic fonto-tblDecl-c)"
-    />
+    <xs:attribute name="domains" type="xs:string" default="(topic fonto-highlight-c) (topic fonto-commonElement-c) (topic fonto-topicMod-c) (topic fonto-tblDecl-c)" />
   </xs:attributeGroup>
 
 </xs:schema>
