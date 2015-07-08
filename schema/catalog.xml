@@ -1,99 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-   
-	<system systemId="fontoDitabase.xsd" uri="fontoDitabase.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoDitabase.xsd" uri="fontoDitabase.xsd"/>
-	<uri name="fontoDitabase.xsd" uri="fontoDitabase.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoDitabase.xsd" uri="fontoDitabase.xsd"/>
 
-	<system systemId="fontoTopic.xsd" uri="fontoTopic.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoTopic.xsd" uri="fontoTopic.xsd"/>
-	<uri name="fontoTopic.xsd" uri="fontoTopic.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoTopic.xsd" uri="fontoTopic.xsd"/>
+	<!-- Shells -->
+	<group xml:base="shells/">
+		<system systemId="fontoDitabase.xsd" uri="Ditabase.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoDitabase.xsd" uri="Ditabase.xsd"/>
+		<uri name="fontoDitabase.xsd" uri="Ditabase.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoDitabase.xsd" uri="Ditabase.xsd"/>
 
-	<system systemId="fontoConcept.xsd" uri="fontoConcept.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoConcept.xsd" uri="fontoConcept.xsd"/>
-	<uri name="fontoConcept.xsd" uri="fontoConcept.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoConcept.xsd" uri="fontoConcept.xsd"/>
+		<system systemId="fontoTopic.xsd" uri="Topic.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoTopic.xsd" uri="Topic.xsd"/>
+		<uri name="fontoTopic.xsd" uri="Topic.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoTopic.xsd" uri="Topic.xsd"/>
 
-	<system systemId="fontoTask.xsd" uri="fontoTask.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoTask.xsd" uri="fontoTask.xsd"/>
-	<uri name="fontoTask.xsd" uri="fontoTask.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoTask.xsd" uri="fontoTask.xsd"/>
+		<system systemId="fontoConcept.xsd" uri="Concept.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoConcept.xsd" uri="Concept.xsd"/>
+		<uri name="fontoConcept.xsd" uri="Concept.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoConcept.xsd" uri="Concept.xsd"/>
 
-	<system systemId="fontoReference.xsd" uri="fontoReference.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoReference.xsd" uri="fontoReference.xsd"/>
-	<uri name="fontoReference.xsd" uri="fontoReference.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoReference.xsd" uri="fontoReference.xsd"/>
+		<system systemId="fontoTask.xsd" uri="Task.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoTask.xsd" uri="Task.xsd"/>
+		<uri name="fontoTask.xsd" uri="Task.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoTask.xsd" uri="Task.xsd"/>
 
-	<system systemId="fontoGlossgroup.xsd" uri="fontoGlossgroup.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoGlossgroup.xsd" uri="fontoGlossgroup.xsd"/>
-	<uri name="fontoGlossgroup.xsd" uri="fontoGlossgroup.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoGlossgroup.xsd" uri="fontoGlossgroup.xsd"/>
+		<system systemId="fontoReference.xsd" uri="Reference.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoReference.xsd" uri="Reference.xsd"/>
+		<uri name="fontoReference.xsd" uri="Reference.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoReference.xsd" uri="Reference.xsd"/>
 
-	<system systemId="fontoGlossentry.xsd" uri="fontoGlossentry.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoGlossentry.xsd" uri="fontoGlossentry.xsd"/>
-	<uri name="fontoGlossentry.xsd" uri="fontoGlossentry.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoGlossentry.xsd" uri="fontoGlossentry.xsd"/>
+		<system systemId="fontoGlossgroup.xsd" uri="Glossgroup.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoGlossgroup.xsd" uri="Glossgroup.xsd"/>
+		<uri name="fontoGlossgroup.xsd" uri="Glossgroup.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoGlossgroup.xsd" uri="Glossgroup.xsd"/>
 
-	<system systemId="fontoCommonElementConstraintMod.xsd" uri="fontoCommonElementConstraintMod.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoCommonElementConstraintMod.xsd" uri="fontoCommonElementConstraintMod.xsd"/>
-	<uri name="fontoCommonElementConstraintMod.xsd" uri="fontoCommonElementConstraintMod.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoCommonElementConstraintMod.xsd" uri="fontoCommonElementConstraintMod.xsd"/>
+		<system systemId="fontoGlossentry.xsd" uri="Glossentry.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoGlossentry.xsd" uri="Glossentry.xsd"/>
+		<uri name="fontoGlossentry.xsd" uri="Glossentry.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoGlossentry.xsd" uri="Glossentry.xsd"/>
 
-	<system systemId="fontoTopicModConstraintMod.xsd" uri="fontoTopicModConstraintMod.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoTopicModConstraintMod.xsd" uri="fontoTopicModConstraintMod.xsd"/>
-	<uri name="fontoTopicModConstraintMod.xsd" uri="fontoTopicModConstraintMod.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoTopicModConstraintMod.xsd" uri="fontoTopicModConstraintMod.xsd"/>
+		<system systemId="fontoMap.xsd" uri="Map.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoMap.xsd" uri="Map.xsd"/>
+		<uri name="fontoMap.xsd" uri="Map.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoMap.xsd" uri="Map.xsd"/>
+	</group>
 
-	<system systemId="fontoTblDeclConstraintMod.xsd" uri="fontoTblDeclConstraintMod.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoTblDeclConstraintMod.xsd" uri="fontoTblDeclConstraintMod.xsd"/>
-	<uri name="fontoTblDeclConstraintMod.xsd" uri="fontoTblDeclConstraintMod.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoTblDeclConstraintMod.xsd" uri="fontoTblDeclConstraintMod.xsd"/>
 
-	<system systemId="fontoHazardstatementDomainConstraintMod.xsd" uri="fontoHazardstatementDomainConstraintMod.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoHazardstatementDomainConstraintMod.xsd" uri="fontoHazardstatementDomainConstraintMod.xsd"/>
-	<uri name="fontoHazardstatementDomainConstraintMod.xsd" uri="fontoHazardstatementDomainConstraintMod.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoHazardstatementDomainConstraintMod.xsd" uri="fontoHazardstatementDomainConstraintMod.xsd"/>
 
-	<system systemId="fontoHighlightDomainConstraintMod.xsd" uri="fontoHighlightDomainConstraintMod.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoHighlightDomainConstraintMod.xsd" uri="fontoHighlightDomainConstraintMod.xsd"/>
-	<uri name="fontoHighlightDomainConstraintMod.xsd" uri="fontoHighlightDomainConstraintMod.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoHighlightDomainConstraintMod.xsd" uri="fontoHighlightDomainConstraintMod.xsd"/>
+	<!-- Constraint modules for DITA base -->
+	<group xml:base="base/">
+		<system systemId="fontoCommonElementConstraintMod.xsd" uri="commonElementConstraintMod.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoCommonElementConstraintMod.xsd" uri="commonElementConstraintMod.xsd"/>
+		<uri name="fontoCommonElementConstraintMod.xsd" uri="commonElementConstraintMod.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoCommonElementConstraintMod.xsd" uri="commonElementConstraintMod.xsd"/>
 
-	<system systemId="fontoMap.xsd" uri="fontoMap.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoMap.xsd" uri="fontoMap.xsd"/>
-	<uri name="fontoMap.xsd" uri="fontoMap.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoMap.xsd" uri="fontoMap.xsd"/>
+		<system systemId="fontoHazardstatementDomainConstraintMod.xsd" uri="hazardstatementDomainConstraintMod.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoHazardstatementDomainConstraintMod.xsd" uri="hazardstatementDomainConstraintMod.xsd"/>
+		<uri name="fontoHazardstatementDomainConstraintMod.xsd" uri="hazardstatementDomainConstraintMod.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoHazardstatementDomainConstraintMod.xsd" uri="hazardstatementDomainConstraintMod.xsd"/>
 
-	<system systemId="fontoMapModConstraintMod.xsd" uri="fontoMapModConstraintMod.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoMapModConstraintMod.xsd" uri="fontoMapModConstraintMod.xsd"/>
-	<uri name="fontoMapModConstraintMod.xsd" uri="fontoMapModConstraintMod.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoMapModConstraintMod.xsd" uri="fontoMapModConstraintMod.xsd"/>
+		<system systemId="fontoHighlightDomainConstraintMod.xsd" uri="highlightDomainConstraintMod.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoHighlightDomainConstraintMod.xsd" uri="highlightDomainConstraintMod.xsd"/>
+		<uri name="fontoHighlightDomainConstraintMod.xsd" uri="highlightDomainConstraintMod.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoHighlightDomainConstraintMod.xsd" uri="highlightDomainConstraintMod.xsd"/>
 
-	<system systemId="fontoConceptModConstraintMod.xsd" uri="fontoConceptModConstraintMod.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoConceptModConstraintMod.xsd" uri="fontoConceptModConstraintMod.xsd"/>
-	<uri name="fontoConceptModConstraintMod.xsd" uri="fontoConceptModConstraintMod.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoConceptModConstraintMod.xsd" uri="fontoConceptModConstraintMod.xsd"/>
+		<system systemId="fontoMapModConstraintMod.xsd" uri="mapModConstraintMod.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoMapModConstraintMod.xsd" uri="mapModConstraintMod.xsd"/>
+		<uri name="fontoMapModConstraintMod.xsd" uri="mapModConstraintMod.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoMapModConstraintMod.xsd" uri="mapModConstraintMod.xsd"/>
 
-	<system systemId="fontoTaskModConstraintMod.xsd" uri="fontoTaskModConstraintMod.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoTaskModConstraintMod.xsd" uri="fontoTaskModConstraintMod.xsd"/>
-	<uri name="fontoTaskModConstraintMod.xsd" uri="fontoTaskModConstraintMod.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoTaskModConstraintMod.xsd" uri="fontoTaskModConstraintMod.xsd"/>
+		<system systemId="fontoTblDeclConstraintMod.xsd" uri="tblDeclConstraintMod.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoTblDeclConstraintMod.xsd" uri="tblDeclConstraintMod.xsd"/>
+		<uri name="fontoTblDeclConstraintMod.xsd" uri="tblDeclConstraintMod.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoTblDeclConstraintMod.xsd" uri="tblDeclConstraintMod.xsd"/>
 
-	<system systemId="fontoReferenceModConstraintMod.xsd" uri="fontoReferenceModConstraintMod.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoReferenceModConstraintMod.xsd" uri="fontoReferenceModConstraintMod.xsd"/>
-	<uri name="fontoReferenceModConstraintMod.xsd" uri="fontoReferenceModConstraintMod.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoReferenceModConstraintMod.xsd" uri="fontoReferenceModConstraintMod.xsd"/>
+		<system systemId="fontoTopicModConstraintMod.xsd" uri="topicModConstraintMod.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoTopicModConstraintMod.xsd" uri="topicModConstraintMod.xsd"/>
+		<uri name="fontoTopicModConstraintMod.xsd" uri="topicModConstraintMod.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoTopicModConstraintMod.xsd" uri="topicModConstraintMod.xsd"/>
+	</group>
 
-	<system systemId="fontoGlossgroupModConstraintMod.xsd" uri="fontoGlossgroupModConstraintMod.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoGlossgroupModConstraintMod.xsd" uri="fontoGlossgroupModConstraintMod.xsd"/>
-	<uri name="fontoGlossgroupModConstraintMod.xsd" uri="fontoGlossgroupModConstraintMod.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoGlossgroupModConstraintMod.xsd" uri="fontoGlossgroupModConstraintMod.xsd"/>
 
-	<system systemId="fontoGlossentryModConstraintMod.xsd" uri="fontoGlossentryModConstraintMod.xsd"/>
-	<system systemId="urn:fonto:names:dita:xsd:fontoGlossentryModConstraintMod.xsd" uri="fontoGlossentryModConstraintMod.xsd"/>
-	<uri name="fontoGlossentryModConstraintMod.xsd" uri="fontoGlossentryModConstraintMod.xsd"/>
-	<uri name="urn:fonto:names:dita:xsd:fontoGlossentryModConstraintMod.xsd" uri="fontoGlossentryModConstraintMod.xsd"/>
+
+	<!-- Constraint modules for DITA techical content -->
+	<group xml:base="technicalContent/">
+		<system systemId="fontoConceptModConstraintMod.xsd" uri="conceptModConstraintMod.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoConceptModConstraintMod.xsd" uri="conceptModConstraintMod.xsd"/>
+		<uri name="fontoConceptModConstraintMod.xsd" uri="conceptModConstraintMod.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoConceptModConstraintMod.xsd" uri="conceptModConstraintMod.xsd"/>
+
+		<system systemId="fontoGlossentryModConstraintMod.xsd" uri="glossentryModConstraintMod.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoGlossentryModConstraintMod.xsd" uri="glossentryModConstraintMod.xsd"/>
+		<uri name="fontoGlossentryModConstraintMod.xsd" uri="glossentryModConstraintMod.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoGlossentryModConstraintMod.xsd" uri="glossentryModConstraintMod.xsd"/>
+
+		<system systemId="fontoGlossgroupModConstraintMod.xsd" uri="glossgroupModConstraintMod.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoGlossgroupModConstraintMod.xsd" uri="glossgroupModConstraintMod.xsd"/>
+		<uri name="fontoGlossgroupModConstraintMod.xsd" uri="glossgroupModConstraintMod.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoGlossgroupModConstraintMod.xsd" uri="glossgroupModConstraintMod.xsd"/>
+
+		<system systemId="fontoReferenceModConstraintMod.xsd" uri="referenceModConstraintMod.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoReferenceModConstraintMod.xsd" uri="referenceModConstraintMod.xsd"/>
+		<uri name="fontoReferenceModConstraintMod.xsd" uri="referenceModConstraintMod.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoReferenceModConstraintMod.xsd" uri="referenceModConstraintMod.xsd"/>
+
+		<system systemId="fontoTaskModConstraintMod.xsd" uri="taskModConstraintMod.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoTaskModConstraintMod.xsd" uri="taskModConstraintMod.xsd"/>
+		<uri name="fontoTaskModConstraintMod.xsd" uri="taskModConstraintMod.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoTaskModConstraintMod.xsd" uri="taskModConstraintMod.xsd"/>
+	</group>
 
 </catalog>
