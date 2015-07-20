@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ===== Start  XSD ================================================== -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:taskMod.xsd:1.2">
+		<!-- Make the <taskBody> required -->
+		<xs:group name="task.content">
+			<xs:sequence>
+				<xs:sequence>
+					<xs:group ref="title"/>
+					<xs:group ref="titlealts" minOccurs="0"/>
+						<xs:choice minOccurs="0">
+							<xs:group ref="shortdesc" minOccurs="0"/>
+							<xs:group ref="abstract" minOccurs="0"/>
+						</xs:choice>
+					<xs:group ref="prolog" minOccurs="0"/>
+					<xs:group ref="taskbody" minOccurs="1" />
+					<xs:group ref="related-links" minOccurs="0"/>
+					<xs:group ref="task-info-types" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:sequence>
+		</xs:group>
+
+
+
+		<!-- Fix the order and cardinality of <prereq> and <context>  to match the DITA strict task -->
+		<xs:group name="taskPreStep" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:sequence>
+				<xs:choice>
+					<xs:sequence>
+						<xs:group minOccurs="0" ref="prereq"/>
+						<xs:group minOccurs="0" ref="context"/>
+					</xs:sequence>
+				</xs:choice>
+			</xs:sequence>
+		</xs:group>
+
+
+
+		<!-- Fix the order and cardinality of <result>, <example> and <postreq> to match the DITA strict task -->
+		<xs:group name="taskPostStep" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+			<xs:sequence>
+				<xs:sequence>
+					<xs:group minOccurs="0" ref="result"/>
+					<xs:group minOccurs="0" ref="example"/>
+					<xs:group minOccurs="0" ref="postreq"/>
+				</xs:sequence>
+			</xs:sequence>
+		</xs:group>
+
+
+
+		<!-- Fix the order and cardinality of <steps> and <steps-unordered>, remove <steps-informal> to match the DITA strict task -->
+		<xs:group name="taskStep">
+			<xs:sequence>
+				<xs:choice minOccurs="0" maxOccurs="1">
+					<xs:group ref="steps"/>
+					<xs:group ref="steps-unordered"/>
+				</xs:choice>
+			</xs:sequence>
+		</xs:group>
+
+
+
+		<!-- Introduce a seperate content model as defined in strict-step.content -->
+		<!-- step.content will be removed in a later stage -->
+		<xs:group name="step.content">
+			<xs:sequence>
+				<xs:sequence minOccurs="0">
+					<xs:group ref="step.content"/>
+				</xs:sequence>
+				<xs:group ref="strict-step.content"/>
+			</xs:sequence>
+		</xs:group>
+
+
+
+		<!-- Introduce a seperate content model as defined in strict-substep.content -->
+		<!-- substep.content will be removed in a later stage -->
+		<xs:group name="substep.content">
+			<xs:sequence>
+				<xs:sequence minOccurs="0">
+					<xs:group ref="substep.content"/>
+				</xs:sequence>
+				<xs:group ref="strict-substep.content"/>
+			</xs:sequence>
+		</xs:group>
+
+	</xs:redefine>
+
+
+
+	<!-- Fix the order of <info>, <stepxmp>, <substeps> and <tutorialinfo>, remove <choices>, <choicetable> and <itemgroup> -->
+	<xs:group name="strict-step.content">
+		<xs:sequence>
+			<xs:group ref="note" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:group ref="cmd"/>
+			<xs:sequence minOccurs="0">
+				<xs:group ref="info" minOccurs="0"/>
+				<xs:group ref="stepxmp" minOccurs="0"/>
+				<xs:group ref="substeps" minOccurs="0"/>
+				<xs:group ref="tutorialinfo" minOccurs="0"/>
+			</xs:sequence>
+			<xs:group ref="stepresult" minOccurs="0"/>
+		</xs:sequence>
+	</xs:group>
+
+
+
+	<!-- Fix the order of <info>, <stepxmp> and <tutorialinfo>, remove <itemgroup> -->
+	<xs:group name="strict-substep.content">
+		<xs:sequence>
+			<xs:sequence>
+				<xs:group ref="note" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:group ref="cmd"/>
+				<xs:sequence minOccurs="0">
+					<xs:group ref="info" minOccurs="0"/>
+					<xs:group ref="tutorialinfo" minOccurs="0"/>
+					<xs:group ref="stepxmp" minOccurs="0"/>
+				</xs:sequence>
+				<xs:group ref="stepresult" minOccurs="0"/>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:group>
+
+</xs:schema>

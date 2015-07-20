@@ -26,7 +26,6 @@
   <xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoCommonElementConstraintMod.xsd"/>
   <xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoTopicModConstraintMod.xsd"/>
   <xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoTblDeclConstraintMod.xsd"/>
-  <xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoTaskModConstraintMod.xsd"/>
   <xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoHighlightDomainConstraintMod.xsd"/>
   
   <xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:commonElementGrp.xsd:1.2">
@@ -39,6 +38,28 @@
       </xs:choice>
     </xs:group>
 
+  </xs:redefine>
+
+  <!-- Include by copy-pasting because DITA-OT does not resolve multiple imports
+  <xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoTaskModConstraintMod.xsd"/>
+  <xs:include schemaLocation="urn:fonto:names:dita:xsd:fontoStrictTaskConstraints.xsd"/>
+  -->
+  <xs:redefine schemaLocation="urn:fonto:names:dita:xsd:fontoTaskInt.xsd">
+    <!-- Remove the optional step.content, only strict-step.content is used -->
+    <xs:group name="step.content">
+      <xs:sequence>
+        <xs:group ref="strict-step.content"/>
+      </xs:sequence>
+    </xs:group>
+
+
+
+    <!-- Remove the optional substep.content, only strict-substep.content is used -->
+    <xs:group name="substep.content">
+      <xs:sequence>
+        <xs:group ref="strict-substep.content"/>
+      </xs:sequence>
+    </xs:group>
   </xs:redefine>
   
   <!--  ================ INFO-TYPES DEFINITION =====================  -->
@@ -58,6 +79,7 @@
                                             (topic fonto-topicMod-c)
                                             (topic fonto-tblDecl-c)
                                             (topic task fonto-taskMod-c)
+                                            (topic task fonto-stricTask-c)
                                             "/>
   </xs:attributeGroup>
 

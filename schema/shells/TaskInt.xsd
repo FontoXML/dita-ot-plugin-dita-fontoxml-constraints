@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================= -->
+<!--                    HEADER                                     -->
+
+<!-- ============================================================= -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/">
+
+ <xs:redefine schemaLocation="urn:oasis:names:tc:dita:xsd:taskMod.xsd:1.2">
+
+    <!-- The next sections remove the mixed content in model in favor of paragraphs -->
+    <!-- itemgroup.cnt constraints in fontoCommonElementConstraintMod.xsd -->
+    <!-- section.notitle.cnt constraint in fontoTopicModConstraintMod.xsd -->
+    <xs:complexType name="context.class" mixed="false">
+      <xs:complexContent>
+        <xs:restriction base="context.class">
+          <xs:sequence>
+            <!-- section.notitle.cnt -->
+            <xs:group ref="context.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="context.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="info.class" mixed="false">
+      <xs:complexContent>
+        <xs:restriction base="info.class">
+          <xs:sequence>
+            <!-- itemgroup.cnt -->
+            <xs:group ref="info.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="info.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="postreq.class" mixed="false">
+      <xs:complexContent>
+        <xs:restriction base="postreq.class">
+          <xs:sequence>
+            <!-- section.notitle.cnt -->
+            <xs:group ref="postreq.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="postreq.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="prereq.class" mixed="false">
+      <xs:complexContent>
+        <xs:restriction base="prereq.class">
+          <xs:sequence>
+            <!-- section.notitle.cnt -->
+            <xs:group ref="prereq.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="prereq.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="result.class" mixed="false">
+      <xs:complexContent>
+        <xs:restriction base="result.class">
+          <xs:sequence>
+            <!-- section.notitle.cnt -->
+            <xs:group ref="result.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="result.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="stepresult.class" mixed="false">
+      <xs:complexContent>
+        <xs:restriction base="stepresult.class">
+          <xs:sequence>
+            <!-- itemgroup.cnt -->
+            <xs:group ref="stepresult.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="stepresult.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="steps-informal.class" mixed="false">
+      <xs:complexContent>
+        <xs:restriction base="steps-informal.class">
+          <xs:sequence>
+            <!-- section.notitle.cnt -->
+            <xs:group ref="steps-informal.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="steps-informal.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="stepxmp.class" mixed="false">
+      <xs:complexContent>
+        <xs:restriction base="stepxmp.class">
+          <xs:sequence>
+            <!-- itemgroup.cnt -->
+            <xs:group ref="stepxmp.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="stepxmp.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="tutorialinfo.class" mixed="false">
+      <xs:complexContent>
+        <xs:restriction base="tutorialinfo.class">
+          <xs:sequence>
+            <!-- itemgroup.cnt -->
+            <xs:group ref="tutorialinfo.content"/>
+          </xs:sequence>
+          <xs:attributeGroup ref="tutorialinfo.attributes"/>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>
+
+
+
+    <!-- Do not allow the <stepsection> element in <steps> -->
+    <xs:group name="steps.content">
+      <xs:sequence>
+        <xs:sequence maxOccurs="unbounded">
+          <xs:group ref="step" />
+        </xs:sequence>
+      </xs:sequence>
+    </xs:group>
+
+
+
+    <!-- Determine if this is actually needed -->
+    <xs:group name="task-info-types">
+      <xs:choice>
+        <xs:group ref="info-types"/>
+      </xs:choice>
+    </xs:group>
+
+    <!-- Make the <taskBody> required -->
+    <xs:group name="task.content">
+      <xs:sequence>
+        <xs:sequence>
+          <xs:group ref="title"/>
+          <xs:group ref="titlealts" minOccurs="0"/>
+            <xs:choice minOccurs="0">
+              <xs:group ref="shortdesc" minOccurs="0"/>
+              <xs:group ref="abstract" minOccurs="0"/>
+            </xs:choice>
+          <xs:group ref="prolog" minOccurs="0"/>
+          <xs:group ref="taskbody" minOccurs="1" />
+          <xs:group ref="related-links" minOccurs="0"/>
+          <xs:group ref="task-info-types" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:group>
+
+
+
+    <!-- Fix the order and cardinality of <prereq> and <context>  to match the DITA strict task -->
+    <xs:group name="taskPreStep" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:sequence>
+        <xs:choice>
+          <xs:sequence>
+            <xs:group minOccurs="0" ref="prereq"/>
+            <xs:group minOccurs="0" ref="context"/>
+          </xs:sequence>
+        </xs:choice>
+      </xs:sequence>
+    </xs:group>
+
+
+
+    <!-- Fix the order and cardinality of <result>, <example> and <postreq> to match the DITA strict task -->
+    <xs:group name="taskPostStep" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:sequence>
+        <xs:sequence>
+          <xs:group minOccurs="0" ref="result"/>
+          <xs:group minOccurs="0" ref="example"/>
+          <xs:group minOccurs="0" ref="postreq"/>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:group>
+
+
+
+    <!-- Fix the order and cardinality of <steps> and <steps-unordered>, remove <steps-informal> to match the DITA strict task -->
+    <xs:group name="taskStep">
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="1">
+          <xs:group ref="steps"/>
+          <xs:group ref="steps-unordered"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:group>
+
+
+
+    <!-- Introduce a seperate content model as defined in strict-step.content -->
+    <!-- step.content will be removed in a later stage -->
+    <xs:group name="step.content">
+      <xs:sequence>
+        <xs:sequence minOccurs="0">
+          <xs:group ref="step.content"/>
+        </xs:sequence>
+        <xs:group ref="strict-step.content"/>
+      </xs:sequence>
+    </xs:group>
+
+
+
+    <!-- Introduce a seperate content model as defined in strict-substep.content -->
+    <!-- substep.content will be removed in a later stage -->
+    <xs:group name="substep.content">
+      <xs:sequence>
+        <xs:sequence minOccurs="0">
+          <xs:group ref="substep.content"/>
+        </xs:sequence>
+        <xs:group ref="strict-substep.content"/>
+      </xs:sequence>
+    </xs:group>
+
+  </xs:redefine>
+
+
+
+  <!-- Fix the order of <info>, <stepxmp>, <substeps> and <tutorialinfo>, remove <choices>, <choicetable> and <itemgroup> -->
+  <xs:group name="strict-step.content">
+    <xs:sequence>
+      <xs:group ref="note" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:group ref="cmd"/>
+      <xs:sequence minOccurs="0">
+        <xs:group ref="info" minOccurs="0"/>
+        <xs:group ref="stepxmp" minOccurs="0"/>
+        <xs:group ref="substeps" minOccurs="0"/>
+        <xs:group ref="tutorialinfo" minOccurs="0"/>
+      </xs:sequence>
+      <xs:group ref="stepresult" minOccurs="0"/>
+    </xs:sequence>
+  </xs:group>
+
+
+
+  <!-- Fix the order of <info>, <stepxmp> and <tutorialinfo>, remove <itemgroup> -->
+  <xs:group name="strict-substep.content">
+    <xs:sequence>
+      <xs:sequence>
+        <xs:group ref="note" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:group ref="cmd"/>
+        <xs:sequence minOccurs="0">
+          <xs:group ref="info" minOccurs="0"/>
+          <xs:group ref="tutorialinfo" minOccurs="0"/>
+          <xs:group ref="stepxmp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:group ref="stepresult" minOccurs="0"/>
+      </xs:sequence>
+    </xs:sequence>
+  </xs:group>
+
+</xs:schema>

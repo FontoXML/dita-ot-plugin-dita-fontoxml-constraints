@@ -23,6 +23,11 @@
 		<uri name="fontoTask.xsd" uri="Task.xsd"/>
 		<uri name="urn:fonto:names:dita:xsd:fontoTask.xsd" uri="Task.xsd"/>
 
+		<system systemId="fontoTaskInt.xsd" uri="TaskInt.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoTaskInt.xsd" uri="TaskInt.xsd"/>
+		<uri name="fontoTaskInt.xsd" uri="TaskInt.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoTaskInt.xsd" uri="TaskInt.xsd"/>
+
 		<system systemId="fontoReference.xsd" uri="Reference.xsd"/>
 		<system systemId="urn:fonto:names:dita:xsd:fontoReference.xsd" uri="Reference.xsd"/>
 		<uri name="fontoReference.xsd" uri="Reference.xsd"/>
@@ -102,6 +107,16 @@
 		<system systemId="urn:fonto:names:dita:xsd:fontoReferenceModConstraintMod.xsd" uri="referenceModConstraintMod.xsd"/>
 		<uri name="fontoReferenceModConstraintMod.xsd" uri="referenceModConstraintMod.xsd"/>
 		<uri name="urn:fonto:names:dita:xsd:fontoReferenceModConstraintMod.xsd" uri="referenceModConstraintMod.xsd"/>
+
+		<system systemId="fontoStrictTaskConstraintsInt.xsd" uri="strictTaskConstraintsInt.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoStrictTaskConstraintsInt.xsd" uri="strictTaskConstraintsInt.xsd"/>
+		<uri name="fontoStrictTaskConstraintsInt.xsd" uri="strictTaskConstraintsInt.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoStrictTaskConstraintsInt.xsd" uri="strictTaskConstraintsInt.xsd"/>
+
+		<system systemId="fontoStrictTaskConstraints.xsd" uri="strictTaskConstraints.xsd"/>
+		<system systemId="urn:fonto:names:dita:xsd:fontoStrictTaskConstraints.xsd" uri="strictTaskConstraints.xsd"/>
+		<uri name="fontoStrictTaskConstraints.xsd" uri="strictTaskConstraints.xsd"/>
+		<uri name="urn:fonto:names:dita:xsd:fontoStrictTaskConstraints.xsd" uri="strictTaskConstraints.xsd"/>
 
 		<system systemId="fontoTaskModConstraintMod.xsd" uri="taskModConstraintMod.xsd"/>
 		<system systemId="urn:fonto:names:dita:xsd:fontoTaskModConstraintMod.xsd" uri="taskModConstraintMod.xsd"/>

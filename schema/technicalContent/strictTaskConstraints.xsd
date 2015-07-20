@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ===== Start  XSD ================================================== -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:annotation xmlns:xs="http://www.w3.org/2001/XMLSchema">
+		<xs:appinfo>
+			<dita:domainsModule xmlns:dita="http://dita.oasis-open.org/architecture/2005/">(topic task fonto-stricTask-c)</dita:domainsModule>
+		</xs:appinfo>
+		<xs:documentation/>
+	</xs:annotation>
+
+	<xs:redefine schemaLocation="urn:fonto:names:dita:xsd:fontoStrictTaskConstraintsInt.xsd">
+
+		<!-- Remove the optional step.content, only strict-step.content is used -->
+		<xs:group name="step.content">
+			<xs:sequence>
+				<xs:group ref="strict-step.content"/>
+			</xs:sequence>
+		</xs:group>
+
+
+
+		<!-- Remove the optional substep.content, only strict-substep.content is used -->
+		<xs:group name="substep.content">
+			<xs:sequence>
+				<xs:group ref="strict-substep.content"/>
+			</xs:sequence>
+		</xs:group>
+
+	</xs:redefine>
+
+</xs:schema>
