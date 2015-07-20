@@ -1,0 +1,27 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"dist",
+				"node_modules",
+				"tmp"
+			],
+			"file_exclude_patterns": [
+				"*.sublime-workspace"
+			],
+			"follow_symlinks": true,
+			"path": "."
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name": "DITA OT",
+			"shell": true,
+			"cmd": ["dita -f html5 -i map.xml"],
+			"working_dir": "${project_path:${folder}}/samples"
+		}
+	]
+}
