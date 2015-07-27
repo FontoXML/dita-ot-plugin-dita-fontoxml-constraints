@@ -346,6 +346,27 @@
       </xs:choice>
     </xs:group>
 
+
+    <!-- dthd and ddhd are required -->
+    <xs:group name="dlhead.content">
+      <xs:sequence>
+        <xs:sequence>
+          <xs:group ref="dthd"/>
+          <xs:group ref="ddhd"/>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:group>
+
+    <!-- dt and dd are no longer repeatable -->
+    <xs:group name="dlentry.content">
+      <xs:sequence>
+        <xs:sequence>
+          <xs:group ref="dt"/>
+          <xs:group ref="dd"/>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:group>
+
   </xs:redefine>
 
 </xs:schema>
